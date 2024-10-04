@@ -305,8 +305,10 @@ if __name__ == '__main__':
         ap, r_acc0, f_acc0, acc0, r_acc1, f_acc1, acc1, best_thres = validate(model, loader, find_thres=True)
 
         with open( os.path.join(opt.result_folder,'ap.txt'), 'a') as f:
-            f.write(dataset_path['key']+': ' + str(round(ap*100, 2))+'\n' )
+            # f.write(dataset_path['key']+': ' + str(round(ap*100, 2))+'\n' )
+            f.write('Average Precision: ' + str(round(ap*100, 2))+'\n' )
 
         with open( os.path.join(opt.result_folder,'acc0.txt'), 'a') as f:
-            f.write(dataset_path['key']+': ' + str(round(r_acc0*100, 2))+'  '+str(round(f_acc0*100, 2))+'  '+str(round(acc0*100, 2))+'\n' )
+            # f.write(dataset_path['key']+': ' + str(round(r_acc0*100, 2))+'  '+str(round(f_acc0*100, 2))+'  '+str(round(acc0*100, 2))+'\n' )
+            f.write('Accuracy: ' + str(round(r_acc0*100, 2))+'  '+str(round(f_acc0*100, 2))+'  '+str(round(acc0*100, 2))+'\n' )
 
